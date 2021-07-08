@@ -1,14 +1,14 @@
-void kaannos_oikeaan(void);
+void kaannos_oikeaan(void); // DEF
 void kaannos_vasempaan(void);
 void aja_eteenpain(void);
 void aja_taakse(void);
 void seis(void);
 
-void mittaus(void); // HC SR 04 UltraSonic Distance Sensor
+void mittaus(void);        // HC SR 04 UltraSonic Distance Sensor
 void tulostus(void);
 void seis(void);
 
-const int trigPin = 2;
+const int trigPin = 2;    // PINS used for Arduino UNO
 const int echoPin = 3;
 const int GNDPin = 11;
 const int VccPin = 12;
@@ -67,7 +67,7 @@ void loop() {
   
 }
 
-void kaannos_oikeaan(void)
+void kaannos_oikeaan(void)  // Drive Right
 {
   digitalWrite(5, HIGH);    //  Stop
   digitalWrite(7, HIGH);
@@ -75,7 +75,7 @@ void kaannos_oikeaan(void)
  
 }
 
-void kaannos_vasempaan(void)
+void kaannos_vasempaan(void) // Drive Left
 {
   digitalWrite(6, HIGH);     
   digitalWrite(5, HIGH);    //  Stop
@@ -83,7 +83,7 @@ void kaannos_vasempaan(void)
 
 }
 
-void aja_eteenpain(void) 
+void aja_eteenpain(void)     // Drive Forward
 {
   mittaus();
   if(etaisyys <= 20) {      // 20 cm danger zone
@@ -99,7 +99,7 @@ void aja_eteenpain(void)
   digitalWrite(9, HIGH); 
   } 
 }
-void aja_taakse(void)
+void aja_taakse(void)       // Drive Back
 {
 
   digitalWrite(5, HIGH);
@@ -107,12 +107,12 @@ void aja_taakse(void)
   digitalWrite(8, HIGH); 
   digitalWrite(10, HIGH); 
 }
-void seis(void)
+void seis(void)           // STOP
 {
-  digitalWrite(7, LOW);   //input 1
-  digitalWrite(8, LOW);   //input 2
-  digitalWrite(9, LOW);   //input 3
-  digitalWrite(10, LOW);  //input 4 
+  digitalWrite(7, LOW);   
+  digitalWrite(8, LOW);   
+  digitalWrite(9, LOW);   
+  digitalWrite(10, LOW);
 }
 void mittaus(void)        // Distance (cm)
 {
